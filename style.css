@@ -1,0 +1,563 @@
+/* Warna tema dan variabel */
+:root {
+    --primary: #0d6efd;
+    --primary-light: rgba(13, 110, 253, 0.1);
+    --secondary: #6c757d;
+    --success: #198754;
+    --danger: #dc3545;
+    --warning: #ffc107;
+    --info: #0dcaf0;
+    --light: #f8f9fa;
+    --dark: #212529;
+    --border-radius: 0.375rem;
+    --shadow-sm: 0 .125rem .25rem rgba(0,0,0,.075);
+    --shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+    --transition-speed: 0.3s;
+}
+
+/* Reset dan style dasar */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: var(--light);
+    color: var(--dark);
+    line-height: 1.6;
+}
+
+/* Header styling */
+.display-5 {
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+/* Card styling */
+.card {
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.card:hover {
+    box-shadow: var(--shadow);
+}
+
+.card-header {
+    background-color: var(--primary-light);
+    padding: 0.75rem 1.25rem;
+    border-bottom: none;
+}
+
+.card-header h5 {
+    margin-bottom: 0;
+    color: var(--primary);
+}
+
+.card-header i {
+    color: var(--primary);
+}
+
+.card-body {
+    padding: 1.5rem;
+}
+
+/* Navigasi tab */
+.nav-tabs {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.nav-tabs .nav-link {
+    color: var(--secondary);
+    border: none;
+    border-bottom: 3px solid transparent;
+    transition: color var(--transition-speed), border-color var(--transition-speed);
+    margin-right: 4px;
+    padding: 0.75rem 1.5rem;
+}
+
+.nav-tabs .nav-link:hover {
+    color: var(--primary);
+    border-bottom: 3px solid rgba(13, 110, 253, 0.3);
+}
+
+.nav-tabs .nav-link.active {
+    color: var(--primary);
+    font-weight: 600;
+    background-color: transparent;
+    border-bottom: 3px solid var(--primary);
+}
+
+/* Form controls */
+.form-label {
+    font-weight: 500;
+    color: var(--dark);
+    margin-bottom: 0.5rem;
+}
+
+.form-control, .form-select {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: var(--border-radius);
+    padding: 0.5rem 0.75rem;
+    transition: border-color var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: rgba(13, 110, 253, 0.5);
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+.input-group-text {
+    background-color: rgba(13, 110, 253, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    color: var(--primary);
+}
+
+/* Buttons */
+.btn {
+    border-radius: var(--border-radius);
+    padding: 0.5rem 1rem;
+    font-weight: 500;
+    transition: all var(--transition-speed);
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-sm);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    border-color: var(--primary);
+}
+
+.btn-success {
+    background-color: var(--success);
+    border-color: var(--success);
+}
+
+.btn-outline-primary {
+    color: var(--primary);
+    border-color: var(--primary);
+}
+
+.btn-outline-secondary {
+    color: var(--secondary);
+    border-color: var(--secondary);
+}
+
+/* Utility classes */
+.shadow-sm {
+    box-shadow: var(--shadow-sm) !important;
+}
+
+.shadow {
+    box-shadow: var(--shadow) !important;
+}
+
+.border-0 {
+    border: none !important;
+}
+
+/* Tabel styling */
+.table {
+    width: 100%;
+    margin-bottom: 1rem;
+    color: var(--dark);
+    vertical-align: middle;
+}
+
+.table th, .table td {
+    padding: 0.75rem;
+    vertical-align: middle;
+}
+
+.table-bordered {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.table-bordered th, .table-bordered td {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.table-hover tbody tr:hover {
+    background-color: rgba(0, 0, 0, 0.02);
+}
+
+.table-light {
+    background-color: rgba(0, 0, 0, 0.03);
+}
+
+/* Process boxes styling */
+.safe-sequence-visual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.process-box {
+    min-width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-sm);
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.process-box:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+}
+
+.arrow {
+    margin: 0 0.5rem;
+    color: var(--primary);
+    transition: transform var(--transition-speed);
+}
+
+/* Animasi untuk highlight di tabel simulasi */
+.highlight {
+    animation: highlight-pulse 1.5s ease;
+    background-color: var(--warning) !important;
+    color: #000;
+}
+
+@keyframes highlight-pulse {
+    0% { background-color: inherit; }
+    50% { background-color: var(--warning); }
+    100% { background-color: var(--warning); }
+}
+
+/* Styling untuk simulasi step-by-step */
+#step-details {
+    background-color: var(--light);
+    border-radius: var(--border-radius);
+    transition: all var(--transition-speed);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+#step-details:hover {
+    box-shadow: var(--shadow-sm);
+}
+
+#step-counter {
+    font-weight: 500;
+    color: #ffffff; /* Mengubah warna teks menjadi putih agar terbaca kontras dengan background abu-abu */
+    background-color: rgba(108, 117, 125, 0.2);
+    border-radius: 50rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+}
+
+#step-description h5 {
+    color: var(--primary);
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.badge {
+    font-size: 0.85em;
+    padding: 0.35em 0.65em;
+    font-weight: 600;
+    border-radius: 50rem;
+}
+
+/* Animasi transisi antar langkah */
+#step-description, #step-status {
+    animation: fade-in var(--transition-speed) ease-in-out;
+}
+
+@keyframes fade-in {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Loader */
+#loader {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 1000;
+    width: 80px;
+    height: 80px;
+    margin: -40px 0 0 -40px;
+    border: 5px solid rgba(13, 110, 253, 0.2);
+    border-radius: 50%;
+    border-top: 5px solid var(--primary);
+    animation: spin 1.2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Animasi konten */
+.ani-up {
+    animation: ani-up 0.5s ease-out;
+}
+
+@keyframes ani-up {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Bootstrap icons */
+.bi::before {
+    display: inline-block;
+    content: "";
+    background-repeat: no-repeat;
+    background-size: 1rem 1rem;
+    vertical-align: text-bottom;
+    width: 1rem;
+    height: 1rem;
+}
+
+.bi-chevron-left::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-chevron-left' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z'/%3E%3C/svg%3E");
+}
+
+.bi-chevron-right::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-chevron-right' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E");
+}
+
+/* Perbaikan responsivitas pada perangkat mobile */
+.table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Pastikan semua input pada tabel responsif */
+.table input.form-control {
+    width: 100%;
+    min-width: 40px;
+}
+
+/* Responsivitas untuk berbagai ukuran layar */
+@media (max-width: 992px) {
+    .table th, .table td {
+        padding: 0.5rem;
+    }
+    
+    .form-control {
+        padding: 0.3rem 0.5rem;
+    }
+    
+    h5 {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .table {
+        font-size: 0.85rem;
+    }
+    
+    .form-control {
+        font-size: 0.85rem;
+        padding: 0.25rem;
+    }
+    
+    /* Buat alur proses yang aman menjadi vertikal pada perangkat mobile */
+    .safe-sequence-visual {
+        flex-direction: column !important;
+    }
+    
+    .safe-sequence-visual .arrow {
+        transform: rotate(90deg);
+        margin: 0.5rem 0;
+    }
+    
+    .process-box {
+        margin: 0.2rem !important;
+    }
+    
+    /* Memperbaiki margin untuk container utama */
+    #main.container {
+        padding: 0.5rem;
+    }
+    
+    /* Membuat tombol lebih responsif */
+    .btn {
+        padding: 0.25rem 0.5rem;
+        font-size: 0.875rem;
+    }
+    
+    /* Membuat ukuran input di perangkat kecil lebih baik */
+    input, select {
+        font-size: 16px !important; /* Mencegah zoom otomatis pada iOS */
+    }
+}
+
+@media (max-width: 576px) {
+    .table {
+        font-size: 0.75rem;
+    }
+    
+    h1 {
+        font-size: 1.75rem;
+    }
+    
+    .lead {
+        font-size: 1rem;
+    }
+    
+    /* Membuat tab responsif pada layar sangat kecil */
+    .nav-tabs .nav-link {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.85rem;
+    }
+}
+
+/* Tambahkan style untuk tab penjelasan */
+.tab-content {
+    padding: 1rem 0;
+}
+
+/* Style untuk kotak proses dalam visualisasi sequence */
+.process-box {
+    min-width: 60px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.arrow {
+    margin: 0 5px;
+}
+
+/* Tambahkan style untuk tabel hasil */
+#result-table table {
+    margin-bottom: 1rem;
+}
+
+/* Style untuk tombol ekspor dan simulasi */
+#export-btn, #simulate-btn {
+    border-radius: 0.25rem;
+    font-weight: 500;
+}
+
+/* Tambahkan transisi hover untuk tombol */
+.btn {
+    transition: all 0.2s ease-in-out;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Styling untuk simulasi step-by-step */
+#step-details {
+    background-color: #f8f9fa;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+#step-details:hover {
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+#step-counter {
+    font-weight: 500;
+    color: #ffffff; /* Mengubah warna teks menjadi putih agar terbaca kontras dengan background abu-abu */
+    background-color: rgba(108, 117, 125, 0.2);
+    border-radius: 50rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+}
+
+#step-description h5 {
+    color: #0d6efd;
+    margin-bottom: 1rem;
+}
+
+.badge {
+    font-size: 0.85em;
+    padding: 0.35em 0.65em;
+}
+
+/* Animasi transisi antar langkah */
+#step-description, #step-status {
+    animation: fade-in 0.3s ease-in-out;
+}
+
+@keyframes fade-in {
+    from { opacity: 0.5; }
+    to { opacity: 1; }
+}
+
+/* Loader */
+#loader {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 1;
+    width: 120px;
+    height: 120px;
+    margin: -76px 0 0 -76px;
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid #3498db;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Add animation to "page content" */
+.ani-up {
+    position: relative;
+    -webkit-animation-name: animatebottom;
+    -webkit-animation-duration: 1s;
+    animation-name: animatebottom;
+    animation-duration: 1s
+}
+
+@-webkit-keyframes animatebottom {
+    from { bottom:-100px; opacity:0 } 
+    to { bottom:0px; opacity:1 }
+}
+
+@keyframes animatebottom { 
+    from{ bottom:-100px; opacity:0 } 
+    to{ bottom:0; opacity:1 }
+}
+
+#main {
+    display: none;
+}
+
+.highlight {
+    animation: highlight-pulse 1.5s ease;
+    background-color: #ffc107 !important;
+}
+
+@keyframes highlight-pulse {
+    0% { background-color: inherit; }
+    50% { background-color: #ffc107; }
+    100% { background-color: #ffc107; }
+}
+
+
+
